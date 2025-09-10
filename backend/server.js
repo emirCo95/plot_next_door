@@ -29,14 +29,14 @@ app.use(passport.initialize());
 app.use(passport.session());
 passportConfig(passport);
 
-//ROUTES
-app.use('/api/v1/auth', authRoutes);
-
 // MongoDB Connection
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected'))
   .catch((err) => console.error('MongoDB connection error:', err));
+
+//ROUTES
+app.use('/api/v1/auth', authRoutes);
 
 // Start Server
 app.listen(PORT, () => {
