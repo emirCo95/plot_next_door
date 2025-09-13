@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
-import HomePage from '../pages/home';
-import LoginPage from '../pages/login';
-import FarmerRegisterPage from '../pages/farmerRegister';
-import CustomerRegisterPage from '../pages/customerRegister';
+import HomePage from '../pages/home.jsx';
+import LoginPage from '../pages/login.jsx';
+import FarmerRegisterPage from '../pages/farmerRegister.jsx';
+import CustomerRegisterPage from '../pages/customerRegister.jsx';
 
 import PrivateRoute from './PrivateRoute';
 
