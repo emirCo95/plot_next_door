@@ -27,7 +27,10 @@ export const registerUser = async (req, res) => {
 };
 
 export const loginUser = (req, res) => {
-  res.status(200).json({ message: 'Logged in', user: req.user });
+  if (!req.user) return res.status(401).json({ message: 'Not authenticated' });
+
+  const { password, ...safeUser } = req.user.toObject(); // converts Mongoose doc to plain object
+  res.status(200).json({ message: 'Logged in', user: safeUser });
 };
 
 export const logoutUser = (req, res) => {
