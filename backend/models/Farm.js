@@ -9,19 +9,26 @@ const farmSchema = new mongoose.Schema(
       trim: true,
     },
     location: {
-      type: String, // Could be a city, address, or coordinates
-      required: false,
-      trim: true,
+      address: { type: String },
+      coordinates: {
+        lat: Number,
+        lng: Number,
+      },
     },
     description: {
       type: String,
       required: false,
       trim: true,
     },
-    crops: [
+    contact: {
+      phone: String,
+      email: String,
+      website: String,
+    },
+    plots: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Crop', // optional - if you later have a Crop model
+        ref: 'Plot', //TODO Create Plot Model
       },
     ],
     owner: {
