@@ -6,10 +6,8 @@ import {
   logout as logoutApi,
 } from '../api/authApi';
 
-// 1️⃣ Create the context
 const AuthContext = createContext();
 
-// 2️⃣ Provider Component
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
