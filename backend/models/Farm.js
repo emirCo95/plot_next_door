@@ -3,6 +3,12 @@ import mongoose from 'mongoose';
 
 const farmSchema = new mongoose.Schema(
   {
+    owner: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User', // Farmer's User model reference
+      required: true,
+      unique: true, // Each farmer should have exactly one farm
+    },
     name: {
       type: String,
       required: true,
@@ -31,12 +37,10 @@ const farmSchema = new mongoose.Schema(
         ref: 'Plot', //TODO Create Plot Model
       },
     ],
-    owner: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'User', // Farmer's User model reference
-      required: true,
-      unique: true, // Each farmer should have exactly one farm
-    },
+    image: { type: String }, // URL to the farm image
+    preferredCrops: [String],
+    maxPlots: { type: Number, default: 10 },
+    assignedPlots: { type: Number, default: 0 },
     isActive: {
       type: Boolean,
       default: true,
