@@ -1,6 +1,7 @@
 // controllers/authController.js
 import bcrypt from 'bcryptjs';
 import User from '../models/User.js';
+import Farm from '../models/Farm.js';
 
 export const registerUser = async (req, res) => {
   try {
@@ -17,6 +18,14 @@ export const registerUser = async (req, res) => {
       password: hashedPassword,
       role,
     });
+
+    // ✅ If user is a farmer, create a farm
+    if (role === 'farmer') {
+      await Farm.create({
+        name: `${name}'s Farm`,
+        owner: newUser._id,
+      });
+    }
 
     res.status(201).json({
       message: 'User registered',
