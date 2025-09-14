@@ -4,7 +4,7 @@ import LoginPage from '../pages/login.jsx';
 import FarmerRegisterPage from '../pages/farmerRegister.jsx';
 import CustomerRegisterPage from '../pages/customerRegister.jsx';
 
-import PrivateRoute from './PrivateRoute';
+import PrivateRoute from './PrivateRoute.jsx';
 
 export default function AppRouter() {
   return (
