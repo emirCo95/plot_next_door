@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuthContext } from './context/AuthContext';
 import Login from './pages/Login';
-import Dashboard from './pages/Dashboard';
+import FarmerDashboard from './pages/FarmerDashboard';
 
-const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
+const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   const { user, loading } = useAuthContext();
   if (loading) return <p>Loading...</p>;
   return user ? children : <Navigate to="/login" replace />;
@@ -16,10 +16,10 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route
-            path="/dashboard"
+            path="/farmer-dashboard"
             element={
               <ProtectedRoute>
-                <Dashboard />
+                <FarmerDashboard />
               </ProtectedRoute>
             }
           />
