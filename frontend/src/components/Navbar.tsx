@@ -14,7 +14,7 @@ export default function Navbar() {
   };
 
   if (loading) {
-    return <div className="h-16 bg-green-700"></div>;
+    return <div className="h-16 bg-green-700">Loading...</div>;
   }
 
   return (
