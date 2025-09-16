@@ -1,7 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react'; // lucide-react icons
 import { useAuth } from '../hooks/useAuth';
+
+//logo
+import logo from '@/assets/logo.png';
+import { Button } from './ui/button';
 
 export default function Navbar() {
   const { user, loading, logoutUser } = useAuth();
@@ -20,18 +24,21 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="bg-green-600 text-white shadow-md">
+    <nav className="bg-saffron text-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-26">
           {/* Logo */}
-          <Link to="/" className="text-2xl font-bold">
-            CropReserve
+          <Link to="/" className="text-2xl font-bold flex-1">
+            <img src={logo} alt="PND Logo" className="w-20" />
           </Link>
+          <div className="flex-1">
+            <p className="text-xl">Your Local Farm, Just a Click Away</p>
+          </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden md:flex items-center space-x-6 md:flex-1">
             <Link to="/" className="hover:underline">
-              Home
+              <Button variant="ghost">Home</Button>
             </Link>
             {user ? (
               <>
@@ -53,10 +60,10 @@ export default function Navbar() {
             ) : (
               <>
                 <Link to="/login" className="hover:underline">
-                  Login
+                  <Button variant="ghost">Login</Button>
                 </Link>
                 <Link to="/register" className="hover:underline">
-                  Register
+                  <Button>Register</Button>
                 </Link>
               </>
             )}
