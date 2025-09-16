@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
@@ -7,6 +9,10 @@
   --color-saffron: #e9c46a;
   --color-sandy-brown: #f4a261;
   --color-burnt-sienna: #e76f51;
+  --color-cosmic-latte: #fff8e8;
+  --color-pnd-green: #00bf62;
+
+  --font-chewy: 'Chewy', sans-serif;
 }
 
 @custom-variant dark (&:is(.dark *));

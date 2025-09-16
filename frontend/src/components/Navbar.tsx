@@ -24,21 +24,31 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="bg-saffron text-white shadow-md">
+    <nav className="bg-cosmic-latte text-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-26">
           {/* Logo */}
-          <Link to="/" className="text-2xl font-bold flex-1">
+          <Link
+            to="/"
+            className="text-2xl font-bold flex-1 flex justify-center"
+          >
             <img src={logo} alt="PND Logo" className="w-20" />
           </Link>
-          <div className="flex-1">
-            <p className="text-xl">Your Local Farm, Just a Click Away</p>
+          <div className="md:flex-1 flex justify-center">
+            <p className="text-xl md:text-2xl text-pnd-green font-chewy font-semibold">
+              Your Local Farm, Just a Click Away
+            </p>
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-6 md:flex-1">
+          <div className="hidden md:flex items-center space-x-6 md:flex-1 justify-center">
             <Link to="/" className="hover:underline">
-              <Button variant="ghost">Home</Button>
+              <Button
+                className="text-pnd-green hover:text-pnd-green"
+                variant="ghost"
+              >
+                Home
+              </Button>
             </Link>
             {user ? (
               <>
@@ -60,7 +70,12 @@ export default function Navbar() {
             ) : (
               <>
                 <Link to="/login" className="hover:underline">
-                  <Button variant="ghost">Login</Button>
+                  <Button
+                    className="text-pnd-green hover:text-pnd-green"
+                    variant="ghost"
+                  >
+                    Login
+                  </Button>
                 </Link>
                 <Link to="/register" className="hover:underline">
                   <Button>Register</Button>
