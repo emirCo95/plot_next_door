@@ -1,11 +1,19 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Menu, X } from 'lucide-react'; // lucide-react icons
+import { CircleUserRound, Menu, User2Icon, X } from 'lucide-react'; // lucide-react icons
 import { useAuth } from '../hooks/useAuth';
 
 //logo
 import logo from '@/assets/logo.png';
 import { Button } from './ui/button';
+
+//dropdown menu
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 export default function Navbar() {
   const { user, loading, logoutUser } = useAuth();
@@ -28,12 +36,11 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-26">
           {/* Logo */}
-          <Link
-            to="/"
-            className="text-2xl font-bold flex-1 flex justify-center"
-          >
-            <img src={logo} alt="PND Logo" className="w-20" />
-          </Link>
+          <div className="flex-1 flex justify-center">
+            <Link to="/">
+              <img src={logo} alt="PND Logo" className="w-20" />
+            </Link>
+          </div>
           <div className="md:flex-1 flex justify-center">
             <p className="text-xl md:text-2xl text-pnd-green font-chewy font-semibold">
               Your Local Farm, Just a Click Away
@@ -44,41 +51,61 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-6 md:flex-1 justify-center">
             <Link to="/" className="hover:underline">
               <Button
-                className="text-pnd-green hover:text-pnd-green"
-                variant="ghost"
+                className="text-pnd-green hover:text-pnd-green cursor-pointer"
+                variant="outline"
               >
-                Home
+                Farms
               </Button>
             </Link>
             {user ? (
               <>
-                <Link to="/dashboard" className="hover:underline">
-                  Dashboard
-                </Link>
-                {user.role === 'farmer' && (
-                  <Link to="/farm" className="hover:underline">
-                    My Farm
-                  </Link>
-                )}
-                <button
-                  onClick={handleLogout}
-                  className="bg-white text-green-700 px-3 py-1 rounded hover:bg-gray-100"
-                >
+                <DropdownMenu>
+                  <DropdownMenuTrigger>
+                    <CircleUserRound className="text-pnd-green cursor-pointer" />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent>
+                    <DropdownMenuItem>
+                      <Link to="/dashboard">
+                        <Button
+                          className="text-pnd-green hover:text-pnd-green cursor-pointer"
+                          variant="outline"
+                        >
+                          Dashboard
+                        </Button>
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                      {user.role === 'farmer' && (
+                        <Link to="/farm">
+                          <Button
+                            className="text-pnd-green hover:text-pnd-green cursor-pointer"
+                            variant="outline"
+                          >
+                            My Farm
+                          </Button>
+                        </Link>
+                      )}
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                <Button onClick={handleLogout} variant="default">
                   Logout
-                </button>
+                </Button>
               </>
             ) : (
               <>
                 <Link to="/login" className="hover:underline">
                   <Button
-                    className="text-pnd-green hover:text-pnd-green"
-                    variant="ghost"
+                    className="text-pnd-green hover:text-pnd-green cursor-pointer"
+                    variant="outline"
                   >
                     Login
                   </Button>
                 </Link>
                 <Link to="/register" className="hover:underline">
-                  <Button>Register</Button>
+                  <Button className="bg-pnd-green text-white cursor-pointer hover:bg-white hover:text-pnd-green">
+                    Register
+                  </Button>
                 </Link>
               </>
             )}
