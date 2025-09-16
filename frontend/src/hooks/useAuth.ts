@@ -14,7 +14,7 @@ export const useAuth = () => {
         return null;
       }
     },
-    retry: true, // don't retry if not authenticated
+    retry: false, // don't retry if not authenticated
     staleTime: 1000 * 60 * 5, // optional: cache for 5 mins
   });
 
