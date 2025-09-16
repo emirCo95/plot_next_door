@@ -4,7 +4,7 @@ import { Menu, X } from 'lucide-react'; // lucide-react icons
 import { useAuth } from '../hooks/useAuth';
 
 export default function Navbar() {
-  const { user, logoutUser } = useAuth();
+  const { user, loading, logoutUser } = useAuth();
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -12,6 +12,10 @@ export default function Navbar() {
     await logoutUser();
     navigate('/login');
   };
+
+  if (loading) {
+    return <div className="h-16 bg-green-700"></div>;
+  }
 
   return (
     <nav className="bg-green-600 text-white shadow-md">
