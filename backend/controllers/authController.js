@@ -51,6 +51,8 @@ export const logoutUser = (req, res) => {
 };
 
 export const getCurrentUser = (req, res) => {
-  if (!req.user) return res.status(401).json({ message: 'Not authenticated' });
-  res.status(200).json(req.user);
+  if (req.user) {
+    return res.json({ user: req.user });
+  }
+  return res.json({ user: null });
 };

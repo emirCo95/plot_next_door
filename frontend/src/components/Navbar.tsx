@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react'; // lucide-react icons
 import { useAuth } from '../hooks/useAuth';
@@ -7,6 +7,8 @@ export default function Navbar() {
   const { user, loading, logoutUser } = useAuth();
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
+
+  console.log(user);
 
   const handleLogout = async () => {
     await logoutUser();
