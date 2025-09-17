@@ -108,15 +108,17 @@ export default function Navbar() {
                         </Link>
                       )}
                     </DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <Button
+                        className="cursor-pointer"
+                        onClick={handleLogout}
+                        variant="default"
+                      >
+                        Logout
+                      </Button>
+                    </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
-                <Button
-                  className="cursor-pointer"
-                  onClick={handleLogout}
-                  variant="default"
-                >
-                  Logout
-                </Button>
               </>
             ) : (
               <>
