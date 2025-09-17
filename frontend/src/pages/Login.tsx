@@ -6,6 +6,7 @@ import { useAuth } from '../hooks/useAuth';
 
 //sonner
 import { toast } from 'sonner';
+import { Link } from 'react-router-dom';
 
 export default function Login() {
   const { loginUser } = useAuth();
@@ -92,9 +93,9 @@ export default function Login() {
 
         <p className="mt-10 text-center text-sm/6 text-gray-400">
           Not a member?{' '}
-          <a href="#" className="font-semibold text-pnd-green">
+          <Link to="/register" className="font-semibold text-pnd-green">
             Sign Up
-          </a>
+          </Link>
         </p>
       </div>
     </div>
