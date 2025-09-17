@@ -56,7 +56,7 @@ export default function Navbar() {
             </Link> */}
           </div>
           <div className="md:flex-1 flex justify-center h-1/2 bg-cosmic-latte px-4 pt-2 rounded-b-3xl items-center self-start shadow-md">
-            <p className="text-md md:text-md lg:text-xl text-charcoal font-fredericka">
+            <p className="text-md md:text-xl lg:text-2xl text-charcoal font-dafoe">
               Farm Fresh, Reserved for You
             </p>
           </div>
@@ -78,21 +78,18 @@ export default function Navbar() {
               <>
                 <DropdownMenu>
                   <DropdownMenuTrigger>
-                    <div className="relative h-full bg-cosmic-latte p-5 rounded-full shadow-md">
+                    <div className="relative h-full bg-cosmic-latte p-4 rounded-full shadow-md">
                       <div className="absolute top-0 right-0 w-4 h-4 p-2 rounded-full bg-cosmic-latte flex items-center justify-center border border-charcoal">
                         <span className="text-sm font-chewy">2</span>
                       </div>
                       <CircleUserRound className="text-charcoal cursor-pointer" />
                     </div>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent
-                    align="end"
-                    className="w-56 bg-cosmic-latte"
-                  >
+                  <DropdownMenuContent align="end" className="w-56">
                     <DropdownMenuItem className="w-full">
                       <Link className="w-full" to="/dashboard">
                         <Button
-                          className="w-full text-charcoal hover:text-pnd-green cursor-pointer"
+                          className="w-full cursor-pointer"
                           variant="outline"
                         >
                           Dashboard
@@ -103,7 +100,7 @@ export default function Navbar() {
                       {user.role === 'farmer' && (
                         <Link className="w-full" to="/farm">
                           <Button
-                            className="w-full text-charcoal hover:text-pnd-green cursor-pointer"
+                            className="w-full cursor-pointer"
                             variant="outline"
                           >
                             My Farm
