@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { CircleUserRound, Menu, User2Icon, X } from 'lucide-react'; // lucide-react icons
+import { CircleUserRound, Menu, X } from 'lucide-react'; // lucide-react icons
 import { useAuth } from '../hooks/useAuth';
 
 //logo
@@ -32,12 +32,15 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="bg-cosmic-latte text-white shadow-md">
+    <nav>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-26">
           {/* Logo */}
-          <div className="flex-1 flex justify-center">
-            <Link to="/">
+          <div className="h-full flex-1 flex justify-center">
+            <Link
+              className="h-full bg-cosmic-latte px-4 pt-2 rounded-b-3xl"
+              to="/"
+            >
               <img src={logo} alt="PND Logo" className="w-20" />
             </Link>
           </div>
@@ -48,10 +51,13 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-6 md:flex-1 justify-center">
-            <Link to="/" className="hover:underline">
+          <div className="h-full hidden md:flex items-center space-x-6 md:flex-1 justify-center gap-4">
+            <Link
+              to="/"
+              className="h-full bg-cosmic-latte px-4 pt-2 rounded-b-3xl flex items-center"
+            >
               <Button
-                className="text-pnd-green hover:text-pnd-green cursor-pointer"
+                className="text-charcoal hover:text-pnd-green cursor-pointer"
                 variant="outline"
               >
                 Farms
@@ -61,7 +67,9 @@ export default function Navbar() {
               <>
                 <DropdownMenu>
                   <DropdownMenuTrigger>
-                    <CircleUserRound className="text-pnd-green cursor-pointer" />
+                    <div className="h-full bg-cosmic-latte p-5 rounded-full">
+                      <CircleUserRound className="text-charcoal cursor-pointer" />
+                    </div>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end">
                     <DropdownMenuItem>
@@ -88,13 +96,20 @@ export default function Navbar() {
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
-                <Button onClick={handleLogout} variant="default">
+                <Button
+                  className="cursor-pointer"
+                  onClick={handleLogout}
+                  variant="default"
+                >
                   Logout
                 </Button>
               </>
             ) : (
               <>
-                <Link to="/login" className="hover:underline">
+                <Link
+                  to="/login"
+                  className="h-full bg-cosmic-latte px-4 pt-2 rounded-b-3xl flex items-center"
+                >
                   <Button
                     className="text-pnd-green hover:text-pnd-green cursor-pointer"
                     variant="outline"
@@ -102,7 +117,7 @@ export default function Navbar() {
                     Login
                   </Button>
                 </Link>
-                <Link to="/register" className="hover:underline">
+                <Link to="/register">
                   <Button className="bg-pnd-green text-white cursor-pointer hover:bg-white hover:text-pnd-green">
                     Register
                   </Button>
