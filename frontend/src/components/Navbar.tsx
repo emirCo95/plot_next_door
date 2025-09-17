@@ -44,9 +44,9 @@ export default function Navbar() {
               <img src={logo} alt="PND Logo" className="w-20" />
             </Link>
           </div>
-          <div className="md:flex-1 flex justify-center">
-            <p className="text-lg md:text-xl text-pnd-green font-fascinate font-semibold">
-              Your Local Farm, Just a Click Away
+          <div className="md:flex-1 flex justify-center h-full bg-cosmic-latte px-4 pt-2 rounded-b-3xl items-center">
+            <p className="text-xl md:text-2xl text-charcoal font-fredericka">
+              Farm Fresh, Reserved for You
             </p>
           </div>
 
@@ -75,7 +75,7 @@ export default function Navbar() {
                     <DropdownMenuItem>
                       <Link to="/dashboard">
                         <Button
-                          className="text-pnd-green hover:text-pnd-green cursor-pointer"
+                          className="text-charcoal hover:text-pnd-green cursor-pointer"
                           variant="outline"
                         >
                           Dashboard
@@ -86,7 +86,7 @@ export default function Navbar() {
                       {user.role === 'farmer' && (
                         <Link to="/farm">
                           <Button
-                            className="text-pnd-green hover:text-pnd-green cursor-pointer"
+                            className="text-charcoal hover:text-pnd-green cursor-pointer"
                             variant="outline"
                           >
                             My Farm
