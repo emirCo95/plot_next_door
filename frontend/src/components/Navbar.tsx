@@ -45,7 +45,7 @@ export default function Navbar() {
             </Link>
           </div>
           <div className="md:flex-1 flex justify-center">
-            <p className="text-xl md:text-2xl text-pnd-green font-chewy font-semibold">
+            <p className="text-lg md:text-xl text-pnd-green font-fascinate font-semibold">
               Your Local Farm, Just a Click Away
             </p>
           </div>
