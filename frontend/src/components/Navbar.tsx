@@ -38,7 +38,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className="h-full flex-1 flex justify-center gap-4">
             <Link
-              className="h-full bg-cosmic-latte px-4 pt-2 rounded-b-3xl"
+              className="h-full bg-cosmic-latte px-4 pt-2 rounded-b-3xl shadow-md"
               to="/"
             >
               <img src={logo} alt="PND Logo" className="w-20" />
@@ -55,8 +55,8 @@ export default function Navbar() {
               </Button>
             </Link> */}
           </div>
-          <div className="md:flex-1 flex justify-center h-1/2 bg-cosmic-latte px-4 pt-2 rounded-b-3xl items-center self-start">
-            <p className="text-xl md:text-2xl text-charcoal font-fredericka">
+          <div className="md:flex-1 flex justify-center h-1/2 bg-cosmic-latte px-4 pt-2 rounded-b-3xl items-center self-start shadow-md">
+            <p className="text-md md:text-md lg:text-xl text-charcoal font-fredericka">
               Farm Fresh, Reserved for You
             </p>
           </div>
@@ -78,7 +78,7 @@ export default function Navbar() {
               <>
                 <DropdownMenu>
                   <DropdownMenuTrigger>
-                    <div className="relative h-full bg-cosmic-latte p-5 rounded-full">
+                    <div className="relative h-full bg-cosmic-latte p-5 rounded-full shadow-md">
                       <div className="absolute top-0 right-0 w-4 h-4 p-2 rounded-full bg-cosmic-latte flex items-center justify-center border border-charcoal">
                         <span className="text-sm font-chewy">2</span>
                       </div>
