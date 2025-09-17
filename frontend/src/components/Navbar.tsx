@@ -63,7 +63,7 @@ export default function Navbar() {
                   <DropdownMenuTrigger>
                     <CircleUserRound className="text-pnd-green cursor-pointer" />
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent>
+                  <DropdownMenuContent align="end">
                     <DropdownMenuItem>
                       <Link to="/dashboard">
                         <Button
