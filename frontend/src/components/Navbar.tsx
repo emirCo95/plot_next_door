@@ -126,17 +126,12 @@ export default function Navbar() {
                   to="/login"
                   className="h-full bg-cosmic-latte px-4 pt-2 rounded-b-3xl flex items-center"
                 >
-                  <Button
-                    className="text-charcoal hover:text-pnd-green cursor-pointer"
-                    variant="outline"
-                  >
+                  <Button className="cursor-pointer" variant="outline">
                     Login
                   </Button>
                 </Link>
                 <Link to="/register">
-                  <Button className="bg-pnd-green text-white cursor-pointer hover:bg-white hover:text-pnd-green">
-                    Register
-                  </Button>
+                  <Button className="cursor-pointer">Register</Button>
                 </Link>
               </>
             )}
