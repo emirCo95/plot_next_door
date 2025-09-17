@@ -1,6 +1,11 @@
+'use client';
+
 import { useState } from 'react';
 import type { FormEvent } from 'react';
 import { useAuth } from '../hooks/useAuth';
+
+//sonner
+import { toast } from 'sonner';
 
 export default function Login() {
   const { loginUser } = useAuth();
@@ -11,9 +16,10 @@ export default function Login() {
     e.preventDefault();
     try {
       await loginUser({ email, password });
-      alert('Logged in successfully!');
+      toast('Logged in successfully!');
     } catch (error) {
-      alert(`Invalid credentials: ${error}`);
+      console.log(error);
+      toast('Invalid credentials');
     }
   };
 

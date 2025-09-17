@@ -1,9 +1,13 @@
+'use client';
+
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './pages/Login';
 import FarmerDashboard from './pages/FarmerDashboard';
 import Navbar from './components/Navbar';
 import { useAuth } from './hooks/useAuth';
 import Home from './pages/Home';
+
+import { Toaster } from '@/components/ui/sonner';
 
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   const { user, loading } = useAuth();
@@ -14,6 +18,7 @@ const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
 function App() {
   return (
     <BrowserRouter>
+      <Toaster />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -32,9 +37,3 @@ function App() {
 }
 
 export default App;
-{
-  /* <Route path="/" component={HeroesPage}>
-  <Route path="reactjs" component={HeroesComponent} />
-  <Route path="reactjs2" component={HeroesCreateComponent} />
-</Route>; */
-}
