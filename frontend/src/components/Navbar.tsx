@@ -85,7 +85,10 @@ export default function Navbar() {
                       <CircleUserRound className="text-charcoal cursor-pointer" />
                     </div>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end" className="w-56">
+                  <DropdownMenuContent
+                    align="end"
+                    className="w-56 bg-cosmic-latte"
+                  >
                     <DropdownMenuItem className="w-full">
                       <Link className="w-full" to="/dashboard">
                         <Button
@@ -98,9 +101,9 @@ export default function Navbar() {
                     </DropdownMenuItem>
                     <DropdownMenuItem>
                       {user.role === 'farmer' && (
-                        <Link to="/farm">
+                        <Link className="w-full" to="/farm">
                           <Button
-                            className="text-charcoal hover:text-pnd-green cursor-pointer"
+                            className="w-full text-charcoal hover:text-pnd-green cursor-pointer"
                             variant="outline"
                           >
                             My Farm
@@ -110,7 +113,7 @@ export default function Navbar() {
                     </DropdownMenuItem>
                     <DropdownMenuItem>
                       <Button
-                        className="cursor-pointer"
+                        className="cursor-pointer w-full"
                         onClick={handleLogout}
                         variant="default"
                       >
