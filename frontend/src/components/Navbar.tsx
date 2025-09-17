@@ -14,6 +14,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import Spinner from './Spinner';
 
 export default function Navbar() {
   const { user, loading, logoutUser } = useAuth();
@@ -28,7 +29,7 @@ export default function Navbar() {
   };
 
   if (loading) {
-    return <div className="h-16 bg-green-700">Loading...</div>;
+    return <Spinner />;
   }
 
   return (
