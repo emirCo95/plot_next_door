@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap');
 
 @import 'tailwindcss';
 @import 'tw-animate-css';
@@ -17,6 +18,7 @@
   --font-chewy: 'Chewy', sans-serif;
   --font-fascinate: 'Fascinate', sans-serif;
   --font-fredericka: 'Fredericka the Great', sans-serif;
+  --font-dafoe: 'Mr Dafoe', sans-serif;
 }
 
 @custom-variant dark (&:is(.dark *));
