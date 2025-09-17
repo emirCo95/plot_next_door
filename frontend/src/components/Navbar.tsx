@@ -43,9 +43,9 @@ export default function Navbar() {
             >
               <img src={logo} alt="PND Logo" className="w-20" />
             </Link>
-            <Link
+            {/* <Link
               to="/"
-              className="h-full bg-cosmic-latte px-4 pt-2 rounded-b-3xl flex items-center"
+              className="hidden md:flex h-full bg-cosmic-latte px-4 pt-2 rounded-b-3xl items-center"
             >
               <Button
                 className="text-charcoal hover:text-pnd-green cursor-pointer"
@@ -53,9 +53,9 @@ export default function Navbar() {
               >
                 Farms
               </Button>
-            </Link>
+            </Link> */}
           </div>
-          <div className="md:flex-1 flex justify-center h-full bg-cosmic-latte px-4 pt-2 rounded-b-3xl items-center">
+          <div className="md:flex-1 flex justify-center h-1/2 bg-cosmic-latte px-4 pt-2 rounded-b-3xl items-center self-start">
             <p className="text-xl md:text-2xl text-charcoal font-fredericka">
               Farm Fresh, Reserved for You
             </p>
@@ -79,17 +79,17 @@ export default function Navbar() {
                 <DropdownMenu>
                   <DropdownMenuTrigger>
                     <div className="relative h-full bg-cosmic-latte p-5 rounded-full">
-                      <div className="absolute top-0 right-0 w-4 h-4 p-2 rounded-full bg-burnt-sienna flex items-center justify-center border border-charcoal">
-                        <span className="text-sm">1</span>
+                      <div className="absolute top-0 right-0 w-4 h-4 p-2 rounded-full bg-cosmic-latte flex items-center justify-center border border-charcoal">
+                        <span className="text-sm font-chewy">2</span>
                       </div>
                       <CircleUserRound className="text-charcoal cursor-pointer" />
                     </div>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end">
-                    <DropdownMenuItem>
-                      <Link to="/dashboard">
+                  <DropdownMenuContent align="end" className="w-56">
+                    <DropdownMenuItem className="w-full">
+                      <Link className="w-full" to="/dashboard">
                         <Button
-                          className="text-charcoal hover:text-pnd-green cursor-pointer"
+                          className="w-full text-charcoal hover:text-pnd-green cursor-pointer"
                           variant="outline"
                         >
                           Dashboard
@@ -125,7 +125,7 @@ export default function Navbar() {
                   className="h-full bg-cosmic-latte px-4 pt-2 rounded-b-3xl flex items-center"
                 >
                   <Button
-                    className="text-pnd-green hover:text-pnd-green cursor-pointer"
+                    className="text-charcoal hover:text-pnd-green cursor-pointer"
                     variant="outline"
                   >
                     Login
@@ -152,7 +152,7 @@ export default function Navbar() {
 
       {/* Mobile Dropdown Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-green-700 px-4 pb-4">
+        <div className="md:hidden bg-cosmic-latte px-4 pb-4 rounded-2xl mt-4">
           <Link
             to="/"
             className="block py-2 hover:underline"
