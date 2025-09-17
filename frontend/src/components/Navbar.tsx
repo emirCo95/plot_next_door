@@ -128,11 +128,11 @@ export default function Navbar() {
                   className="h-full bg-cosmic-latte px-4 pt-2 rounded-b-3xl flex items-center"
                 >
                   <Button className="cursor-pointer" variant="outline">
-                    Login
+                    Sign In
                   </Button>
                 </Link>
                 <Link to="/register">
-                  <Button className="cursor-pointer">Register</Button>
+                  <Button className="cursor-pointer">Sign Up</Button>
                 </Link>
               </>
             )}
