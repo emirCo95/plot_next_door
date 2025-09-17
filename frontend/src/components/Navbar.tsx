@@ -36,22 +36,13 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-26">
           {/* Logo */}
-          <div className="h-full flex-1 flex justify-center">
+          <div className="h-full flex-1 flex justify-center gap-4">
             <Link
               className="h-full bg-cosmic-latte px-4 pt-2 rounded-b-3xl"
               to="/"
             >
               <img src={logo} alt="PND Logo" className="w-20" />
             </Link>
-          </div>
-          <div className="md:flex-1 flex justify-center h-full bg-cosmic-latte px-4 pt-2 rounded-b-3xl items-center">
-            <p className="text-xl md:text-2xl text-charcoal font-fredericka">
-              Farm Fresh, Reserved for You
-            </p>
-          </div>
-
-          {/* Desktop Menu */}
-          <div className="h-full hidden md:flex items-center space-x-6 md:flex-1 justify-center gap-4">
             <Link
               to="/"
               className="h-full bg-cosmic-latte px-4 pt-2 rounded-b-3xl flex items-center"
@@ -63,11 +54,34 @@ export default function Navbar() {
                 Farms
               </Button>
             </Link>
+          </div>
+          <div className="md:flex-1 flex justify-center h-full bg-cosmic-latte px-4 pt-2 rounded-b-3xl items-center">
+            <p className="text-xl md:text-2xl text-charcoal font-fredericka">
+              Farm Fresh, Reserved for You
+            </p>
+          </div>
+
+          {/* Desktop Menu */}
+          <div className="h-full hidden md:flex items-center space-x-6 md:flex-1 justify-center gap-4">
+            {/* <Link
+              to="/"
+              className="h-full bg-cosmic-latte px-4 pt-2 rounded-b-3xl flex items-center"
+            >
+              <Button
+                className="text-charcoal hover:text-pnd-green cursor-pointer"
+                variant="outline"
+              >
+                Farms
+              </Button>
+            </Link> */}
             {user ? (
               <>
                 <DropdownMenu>
                   <DropdownMenuTrigger>
-                    <div className="h-full bg-cosmic-latte p-5 rounded-full">
+                    <div className="relative h-full bg-cosmic-latte p-5 rounded-full">
+                      <div className="absolute top-0 right-0 w-4 h-4 p-2 rounded-full bg-burnt-sienna flex items-center justify-center border border-charcoal">
+                        <span className="text-sm">1</span>
+                      </div>
                       <CircleUserRound className="text-charcoal cursor-pointer" />
                     </div>
                   </DropdownMenuTrigger>
