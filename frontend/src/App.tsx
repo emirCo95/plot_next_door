@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Login from './pages/Login';
-import Register from './pages/Register';
+import FarmerRegister from './pages/FarmerRegister';
 import FarmerDashboard from './pages/FarmerDashboard';
 
 import { useAuth } from './hooks/useAuth';
@@ -26,7 +26,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/farmer-register" element={<FarmerRegister />} />
         <Route
           path="/farmer-dashboard"
           element={
