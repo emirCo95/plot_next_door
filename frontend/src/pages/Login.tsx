@@ -67,9 +67,12 @@ export default function Login() {
                 Password
               </label>
               <div className="text-sm">
-                <a href="#" className="font-semibold text-pnd-green">
+                <Link
+                  to="/forgot-password"
+                  className="font-semibold text-pnd-green"
+                >
                   Forgot password?
-                </a>
+                </Link>
               </div>
             </div>
             <div className="mt-2">
