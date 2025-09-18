@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -29,13 +30,13 @@ const Home = () => {
           variant="outline"
           className="px-8 py-4 rounded-full text-sm md:text-md lg:text-lg cursor-pointer bg-white/70 text-charcoal hover:bg-white/90 hover:scale-105 transition-all duration-200"
         >
-          Browse Farms
+          <Link to="/farms">Browse Farms</Link>
         </Button>
         <Button
           variant="outline"
           className="px-8 py-4 rounded-full text-sm md:text-md lg:text-lg cursor-pointer bg-white/70 text-charcoal hover:bg-white/90 hover:scale-105 transition-all duration-200"
         >
-          Sign Up Now
+          <Link to="/register">Sign Up Now</Link>
         </Button>
       </div>
     </div>
