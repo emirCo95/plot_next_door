@@ -132,7 +132,7 @@ export default function Navbar() {
                   </Button>
                 </Link>
                 <Link
-                  className="h-full bg-cosmic-latte px-4 pt-2 rounded-b-3xl flex items-center"
+                  className="h-full px-4 pt-2 flex items-center"
                   to="/register"
                 >
                   <Button className="cursor-pointer">Sign Up</Button>
