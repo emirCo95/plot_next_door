@@ -1,9 +1,11 @@
 import express from 'express';
 
-import { requireAuth } from '../middleware/authMiddleware';
+import { requireAuth } from '../middleware/authMiddleware.js';
+
+import { fetchFarmDetails } from '../controllers/farmController.js';
 
 const router = express.Router();
 
-router.get('/farm', requireAuth, fetchFarmDetails);
+router.get('/', requireAuth, fetchFarmDetails);
 
 export default router;

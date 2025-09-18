@@ -11,6 +11,7 @@ import { configurePassport } from './config/passport.js';
 
 //ROUTES IMPORT
 import authRoutes from './routes/authRoutes.js';
+import farmRoutes from './routes/farmRoutes.js';
 
 dotenv.config();
 
@@ -58,6 +59,7 @@ app.use(passport.session());
 
 // Routes
 app.use('/api/v1/auth', authRoutes);
+app.use('/api/v1/farm', farmRoutes);
 
 // Error handling middleware (optional)
 app.use((err, req, res, next) => {
