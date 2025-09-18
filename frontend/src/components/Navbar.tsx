@@ -125,7 +125,7 @@ export default function Navbar() {
               <>
                 <Link
                   to="/login"
-                  className="h-full bg-cosmic-latte px-4 pt-2 rounded-b-3xl flex items-center"
+                  className="h-full bg-cosmic-latte px-4 pt-2 rounded-b-3xl flex items-center shadow-md"
                 >
                   <Button className="cursor-pointer" variant="outline">
                     Sign In
