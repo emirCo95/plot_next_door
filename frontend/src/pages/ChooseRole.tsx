@@ -13,13 +13,13 @@ const ChooseRole = () => {
           alt="customer"
         />
         <Button variant={'outline'} className="w-full mt-4">
-          <Link to="/customer-register">Register as Customer</Link>
+          <Link to="/customer-register">Sign Up as Customer</Link>
         </Button>
       </div>
       <div className="w-1/2 m-auto rounded-2xl">
         <img className="w-full h-full rounded-2xl" src={farmer} alt="farmer" />
         <Button variant={'outline'} className="w-full mt-4">
-          <Link to="/farmer-register">Register as Farmer</Link>
+          <Link to="/farmer-register">Sign Up as Farmer</Link>
         </Button>
       </div>
     </div>
