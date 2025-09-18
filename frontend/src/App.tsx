@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import FarmerRegister from './pages/FarmerRegister';
+import CustomerRegister from './pages/CustomerRegister';
 import FarmerDashboard from './pages/FarmerDashboard';
 
 import { useAuth } from './hooks/useAuth';
@@ -27,6 +28,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/farmer-register" element={<FarmerRegister />} />
+        <Route path="/customer-register" element={<CustomerRegister />} />
         <Route
           path="/farmer-dashboard"
           element={
