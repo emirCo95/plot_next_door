@@ -8,6 +8,7 @@ import Login from './pages/Login';
 import FarmerRegister from './pages/FarmerRegister';
 import CustomerRegister from './pages/CustomerRegister';
 import FarmerDashboard from './pages/FarmerDashboard';
+import ChooseRole from './pages/ChooseRole';
 
 import { useAuth } from './hooks/useAuth';
 
@@ -29,6 +30,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/farmer-register" element={<FarmerRegister />} />
         <Route path="/customer-register" element={<CustomerRegister />} />
+        <Route path="/register" element={<ChooseRole />} />
         <Route
           path="/farmer-dashboard"
           element={
