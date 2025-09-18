@@ -20,7 +20,7 @@ export default function Login() {
     e.preventDefault();
     try {
       await loginUser({ email, password });
-      toast('Signed in successfully!');
+      toast('Sign in successfull!');
       navigate('/');
     } catch (error) {
       console.log(error);
