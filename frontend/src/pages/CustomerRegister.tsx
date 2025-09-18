@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 
 const role = 'customer';
 
-export default function FarmerRegister() {
+export default function CustomerRegister() {
   const { registerUser } = useAuth();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
