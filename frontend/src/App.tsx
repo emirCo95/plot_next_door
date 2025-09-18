@@ -1,11 +1,14 @@
 'use client';
 
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import Login from './pages/Login';
-import FarmerDashboard from './pages/FarmerDashboard';
+
 import Navbar from './components/Navbar';
-import { useAuth } from './hooks/useAuth';
 import Home from './pages/Home';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import FarmerDashboard from './pages/FarmerDashboard';
+
+import { useAuth } from './hooks/useAuth';
 
 import { Toaster } from '@/components/ui/sonner';
 
@@ -23,6 +26,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route
           path="/farmer-dashboard"
           element={
