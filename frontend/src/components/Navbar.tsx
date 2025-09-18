@@ -44,7 +44,7 @@ export default function Navbar() {
             </Link>
           </div>
           <div className="hidden md:flex-1 lg:flex justify-center h-1/2 bg-cosmic-latte px-4 pt-2 rounded-b-3xl items-center self-start shadow-md">
-            <p className="text-md md:text-xl lg:text-2xl text-charcoal font-dafoe">
+            <p className="text-md md:text-xl lg:text-2xl text-charcoal font-chewy">
               Farm Fresh, Reserved for You
             </p>
           </div>
