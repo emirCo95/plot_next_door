@@ -37,7 +37,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className="h-full flex-1 flex justify-center gap-4">
             <Link
-              className="h-full bg-cosmic-latte px-4 pt-2 rounded-b-3xl shadow-md"
+              className="hidden md:block h-full bg-cosmic-latte px-4 pt-2 rounded-b-3xl shadow-md"
               to="/"
             >
               <img src={logo} alt="PND Logo" className="w-20" />
