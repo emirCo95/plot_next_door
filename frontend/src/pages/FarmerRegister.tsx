@@ -27,7 +27,7 @@ export default function FarmerRegister() {
       navigate('/');
     } catch (error) {
       console.log(error);
-      toast('Something wen wrong!');
+      toast('Something went wrong!');
     }
   };
 
