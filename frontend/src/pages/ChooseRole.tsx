@@ -1,6 +1,7 @@
 import farmer from '@/assets/farmer.jpg';
 import customer from '@/assets/customer.jpg';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const ChooseRole = () => {
   return (
@@ -12,13 +13,13 @@ const ChooseRole = () => {
           alt="customer"
         />
         <Button variant={'outline'} className="w-full mt-4">
-          <a href="/customer-register">Register as Customer</a>
+          <Link to="/customer-register">Register as Customer</Link>
         </Button>
       </div>
       <div className="w-1/2 m-auto rounded-2xl">
         <img className="w-full h-full rounded-2xl" src={farmer} alt="farmer" />
         <Button variant={'outline'} className="w-full mt-4">
-          <a href="/farmer-register">Register as Farmer</a>
+          <Link to="/farmer-register">Register as Farmer</Link>
         </Button>
       </div>
     </div>
