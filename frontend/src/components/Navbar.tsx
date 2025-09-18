@@ -42,17 +42,6 @@ export default function Navbar() {
             >
               <img src={logo} alt="PND Logo" className="w-20" />
             </Link>
-            {/* <Link
-              to="/"
-              className="hidden md:flex h-full bg-cosmic-latte px-4 pt-2 rounded-b-3xl items-center"
-            >
-              <Button
-                className="text-charcoal hover:text-pnd-green cursor-pointer"
-                variant="outline"
-              >
-                Farms
-              </Button>
-            </Link> */}
           </div>
           <div className="hidden md:flex-1 lg:flex justify-center h-1/2 bg-cosmic-latte px-4 pt-2 rounded-b-3xl items-center self-start shadow-md">
             <p className="text-md md:text-xl lg:text-2xl text-charcoal font-dafoe">
@@ -62,17 +51,6 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <div className="h-full hidden md:flex items-center space-x-6 md:flex-1 justify-center gap-4">
-            {/* <Link
-              to="/"
-              className="h-full bg-cosmic-latte px-4 pt-2 rounded-b-3xl flex items-center"
-            >
-              <Button
-                className="text-charcoal hover:text-pnd-green cursor-pointer"
-                variant="outline"
-              >
-                Farms
-              </Button>
-            </Link> */}
             {user ? (
               <>
                 <DropdownMenu>
