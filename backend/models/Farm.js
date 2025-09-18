@@ -34,7 +34,7 @@ const farmSchema = new mongoose.Schema(
     plots: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Plot', //TODO Create Plot Model
+        ref: 'Plot', //TODO: Create Plot Model
       },
     ],
     image: { type: String }, // URL to the farm image
