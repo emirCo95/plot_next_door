@@ -12,7 +12,7 @@ const Farm = () => {
   }
 
   return (
-    <div className="h-[100vh] flex items-center justify-center">
+    <div className="h-[100vh] flex items-center justify-center bg-gradient-to-b from-white to-cosmic-latte">
       {farm?.name}
     </div>
   );
