@@ -12,8 +12,9 @@ const Farm = () => {
   }
 
   return (
-    <div className="h-[100vh] flex items-center justify-center bg-gradient-to-b from-white to-cosmic-latte">
-      {farm?.name}
+    <div className="h-[100vh] grid grid-cols-1 md:grid-cols-2 bg-gradient-to-b from-white to-cosmic-latte">
+      <div className="flex flex-col items-center justify-center p-8"></div>
+      <div className="flex flex-col items-center justify-center p-8"></div>
     </div>
   );
 };
