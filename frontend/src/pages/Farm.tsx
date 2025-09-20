@@ -10,8 +10,10 @@ const Farm = () => {
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     const { name, value } = e.target;
-    setData((prev) => ({ ...prev, [name]: value }));
+    setData((prev) => (prev ? { ...prev, [name]: value } : prev));
   }
+
+  console.log(data);
 
   if (loading) {
     return (
@@ -30,6 +32,7 @@ const Farm = () => {
         <Input
           name="name"
           id="name"
+          type="text"
           defaultValue={farm?.name || ''}
           onChange={handleChange}
           className="mb-4"
