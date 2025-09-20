@@ -13,8 +13,6 @@ const Farm = () => {
     setData((prev) => (prev ? { ...prev, [name]: value } : prev));
   }
 
-  console.log(data);
-
   if (loading) {
     return (
       <div className="h-[100vh] flex items-center justify-center">
