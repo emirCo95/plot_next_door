@@ -14,11 +14,17 @@ import Farm from './pages/Farm';
 import { useAuth } from './hooks/useAuth';
 
 import { Toaster } from '@/components/ui/sonner';
+import Spinner from './components/Spinner';
 
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   const { user, loading } = useAuth();
   if (loading) return <p>Loading...</p>;
   return user ? children : <Navigate to="/login" replace />;
+};
+const GuestRoute = ({ children }: { children: React.ReactNode }) => {
+  const { user, loading } = useAuth();
+  if (loading) return <Spinner />;
+  return user ? <Navigate to="/" replace /> : children;
 };
 
 function App() {
@@ -28,10 +34,38 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/farmer-register" element={<FarmerRegister />} />
-        <Route path="/customer-register" element={<CustomerRegister />} />
-        <Route path="/register" element={<ChooseRole />} />
+        <Route
+          path="/login"
+          element={
+            <GuestRoute>
+              <Login />
+            </GuestRoute>
+          }
+        />
+        <Route
+          path="/farmer-register"
+          element={
+            <GuestRoute>
+              <FarmerRegister />
+            </GuestRoute>
+          }
+        />
+        <Route
+          path="/customer-register"
+          element={
+            <GuestRoute>
+              <CustomerRegister />
+            </GuestRoute>
+          }
+        />
+        <Route
+          path="/register"
+          element={
+            <GuestRoute>
+              <ChooseRole />
+            </GuestRoute>
+          }
+        />
         <Route
           path="/farm"
           element={
