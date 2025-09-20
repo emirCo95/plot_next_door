@@ -18,7 +18,7 @@ import Spinner from './components/Spinner';
 
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   const { user, loading } = useAuth();
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Spinner />;
   return user ? children : <Navigate to="/login" replace />;
 };
 const GuestRoute = ({ children }: { children: React.ReactNode }) => {
