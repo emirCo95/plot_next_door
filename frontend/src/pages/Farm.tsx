@@ -4,13 +4,21 @@ import { Label } from '@/components/ui/label';
 import { useFarm } from '@/hooks/useFarm';
 import { useState } from 'react';
 import { type Farm } from '@/api/farm';
+import { Button } from '@/components/ui/button';
 const Farm = () => {
   const { farm, loading } = useFarm();
-  const [data, setData] = useState<Farm | null>(farm || null);
+  const [data, setData] = useState<Farm | null>({
+    name: farm?.name || '',
+  });
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     const { name, value } = e.target;
     setData((prev) => (prev ? { ...prev, [name]: value } : prev));
+  }
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    console.log(data);
   }
 
   if (loading) {
@@ -31,10 +39,11 @@ const Farm = () => {
           name="name"
           id="name"
           type="text"
-          defaultValue={farm?.name || ''}
+          value={data?.name}
           onChange={handleChange}
           className="mb-4"
         />
+        <Button onClick={handleSubmit}>Save</Button>
       </div>
       <div className="flex flex-col items-center justify-center p-8"></div>
     </div>
